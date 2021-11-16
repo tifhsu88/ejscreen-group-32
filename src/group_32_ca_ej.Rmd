@@ -25,10 +25,13 @@ ggplot(data = ces, aes(x = white_percent, y = ces_3_0_score)) +
   geom_hex() +
   labs(x = "Percentage White in Census Tract",
        y = "CalEnviroScreen Pollution Burden Score",
-       caption = "The relationship between the percentage of white population from the 2010 census and the aggregate CalEnviroScreen 3.0 score in CA.") +
+       caption = "The relationship between the percentage of white population 
+       from the 2010 census and the aggregate CalEnviroScreen 3.0 score in CA.") +
   scale_fill_gradient(low = "forestgreen", high = "firebrick") +
   theme_minimal()
 ```
 
+There are less communities with high CES 3.0 scores in areas with high percentage of white individuals. There appears to be a positive relationship between whiteness and low rates of environmental pollution. 
 
+***Data Citation: *** Data taken from the 2010 US Census
 
