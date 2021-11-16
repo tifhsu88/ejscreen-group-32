@@ -6,7 +6,7 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 library(tidyverse)
 library(janitor)
 library(here)
@@ -24,7 +24,8 @@ ces <- read_csv(here('data','ces3demographics.csv')) %>%
 ggplot(data = ces, aes(x = white_percent, y = ces_3_0_score)) +
   geom_hex() +
   labs(x = "Percentage White in Census Tract",
-       y = "CalEnviroScreen Pollution Burden Score") +
+       y = "CalEnviroScreen Pollution Burden Score",
+       caption = "The relationship between the percentage of white population from the 2010 census and the aggregate CalEnviroScreen 3.0 score in CA.") +
   scale_fill_gradient(low = "forestgreen", high = "firebrick") +
   theme_minimal()
 ```
